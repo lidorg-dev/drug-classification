@@ -19,7 +19,7 @@ eval:
 		
 update-branch:
 	git config --global user.name $(USER_NAME)
-	git config --global user.email $(USER_EMAIL)
+    git config --global user.email $(USER_EMAIL)
 	git commit -am "Update with new results"
 	git push --force origin $(BRANCH)
 
@@ -28,10 +28,10 @@ hf-login:
 	huggingface-cli login --token $(HF)
 
 push-hub:
-	git remote set-url origin  "https://huggingface.co/spaces/lidorlg/Drug-Classification"
+	git remote set-url origin "https://huggingface.co/spaces/lidorlg/Drug-Classification"
 	git add ./App/drug_app.py
 	git config --global user.email "github@github.com"
-  	git config --global user.name "github-bot"
+	git config --global user.name "github-bot"
 	git commit -m "Add application file"
 	git push
 	huggingface-cli upload lidorlg/Drug-Classification ./App --repo-type=space --commit-message="Sync App files"
