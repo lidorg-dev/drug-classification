@@ -30,6 +30,8 @@ hf-login:
 push-hub:
 	git remote add origin https://huggingface.co/spaces/lidorlg/Drug-Classification
 	git add ./App/app.py
+	git config --global user.email "lidorlg@gmail.com"
+  	git config --global user.name "lidorlg"
 	git commit -m "Add application file"
 	git push
 	huggingface-cli upload lidorlg/Drug-Classification ./App --repo-type=space --commit-message="Sync App files"
